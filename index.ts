@@ -6,9 +6,7 @@ export class PlyError {
 export interface Song {
     title: string;
     artist: string;
-    id: {
-        melon: string;
-    }
+    id: Record<string, string>
 }
 
 export interface Adaptor {
