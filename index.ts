@@ -24,7 +24,7 @@ export interface Redirect {
 }
 
 export interface Adaptor {
-    getPlaylistContent(url: string, auth?: Auth): Promise<Song[] | PlyError>;
-    generateURL(keys: string[], auth?: Auth): Promise<string>;
-    findSongId(song: Song, auth?: Auth): Promise<string>;
+    getPlaylistContent(url: string, auth?: Auth): Promise<Song[] | PlyError | Redirect>;
+    generateURL(keys: string[], auth?: Auth): Promise<string | Redirect>;
+    findSongId(song: Song, auth?: Auth): Promise<string | Redirect>;
 }
