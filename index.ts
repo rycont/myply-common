@@ -13,6 +13,13 @@ export interface Song {
     id: Record<string, string>;
 }
 
+export interface Playlist {
+    title: string;
+    description: string;
+    tracks: Song[];
+    preGenerated: Record<string, string>;
+}
+
 export interface Auth {
     token: string;
     platform: string;
@@ -25,6 +32,6 @@ export interface Redirect {
 
 export interface Adaptor {
     getPlaylistContent(url: string, auth?: Auth): Promise<Song[] | PlyError | Redirect>;
-    generateURL(keys: string[], auth?: Auth): Promise<string | Redirect>;
+    generateURL(playlsit: Playlist, auth?: Auth): Promise<string | Redirect>;
     findSongId(song: Song, auth?: Auth): Promise<string | Redirect>;
 }
