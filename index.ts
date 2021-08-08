@@ -18,6 +18,11 @@ export interface Auth {
     platform: string;
 }
 
+export interface Redirect {
+    url: string;
+    reason: string;
+}
+
 export interface Adaptor {
     getPlaylistContent(url: string, auth?: Auth): Promise<Song[] | PlyError>;
     generateURL(keys: string[], auth?: Auth): Promise<string>;
