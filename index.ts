@@ -13,8 +13,13 @@ export interface Song {
     id: Record<string, string>;
 }
 
+export interface Auth {
+    token: string;
+    platform: string;
+}
+
 export interface Adaptor {
-    getPlaylistContent(url: string): Promise<Song[] | PlyError>;
-    generateURL(keys: string[]): Promise<string>;
-    findSongId(song: Song): Promise<string>;
+    getPlaylistContent(url: string, auth?: Auth): Promise<Song[] | PlyError>;
+    generateURL(keys: string[], auth?: Auth): Promise<string>;
+    findSongId(song: Song, auth?: Auth): Promise<string>;
 }
