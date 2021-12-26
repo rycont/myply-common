@@ -10,14 +10,13 @@ export class PlyError {
 export interface Song {
     title: string;
     artist: string;
-    id: Record<string, string>;
+    channelIds: Record<string, string>;
 }
 
 export interface Playlist {
     title: string;
     description: string;
     tracks: Song[];
-    preGenerated: Record<string, string>;
 }
 
 export interface Auth {
