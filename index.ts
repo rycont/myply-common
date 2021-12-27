@@ -33,4 +33,5 @@ export interface Adaptor {
     getPlaylistContent(url: string, auth?: Auth): Promise<Song[] | PlyError | Redirect>;
     generateURL(playlist: Playlist, auth?: Auth): Promise<string | Redirect>;
     findSongId(song: Song, auth?: Auth): Promise<string | Redirect>;
+    determinator: string[]
 }
