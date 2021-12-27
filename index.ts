@@ -15,7 +15,7 @@ export interface Song {
 
 export interface Playlist {
     title: string;
-    description: string;
+    description?: string;
     tracks: Song[];
 }
 
@@ -30,7 +30,7 @@ export interface Redirect {
 }
 
 export interface Adaptor {
-    getPlaylistContent(url: string, auth?: Auth): Promise<Song[] | PlyError | Redirect>;
+    getPlaylistContent(url: string, auth?: Auth): Promise<Playlist | PlyError | Redirect>;
     generateURL(playlist: Playlist, auth?: Auth): Promise<string | Redirect>;
     findSongId(song: Song, auth?: Auth): Promise<string | Redirect>;
     determinator: string[]
