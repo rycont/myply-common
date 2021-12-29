@@ -8,13 +8,13 @@ export class PlyError {
 }
 
 export interface Song {
-    title: string;
+    name: string;
     artist: string;
     channelIds: Record<string, string>;
 }
 
 export interface Playlist {
-    title: string;
+    name: string;
     description?: string;
     tracks: Song[];
 }
