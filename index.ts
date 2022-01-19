@@ -39,5 +39,8 @@ export interface Adaptor {
         logo: string;
         name: string;
         color: string;
+    };
+    config?: {
+        isPlaylistPlpatformSpecific?: boolean;
     }
 }
